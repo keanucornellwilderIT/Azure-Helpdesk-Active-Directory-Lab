@@ -425,27 +425,7 @@ The lab helped reinforce how heavily enterprise environments depend on:
 
 ---
 
-# Future Improvements
-
-- Add mapped network drives
-- Configure printers
-- Add DHCP
-- Configure Entra ID hybrid integration
-- Add Intune integration
-- Add PowerShell automation
-- Add monitoring and alerts
-- Create automated user provisioning scripts
-
----
-
 # Author
 
 **Keanu Wilder**
 
-- IT Support and Cloud Enthusiast
-- Building hands-on enterprise and cloud infrastructure labs
-- Focused on Help Desk, System Administration, and Cloud Engineering
-
-- IT Support & Cloud Enthusiast
-- Building hands-on enterprise and cloud infrastructure labs
-- Focused on Help Desk, System Administration, and Cloud Engineering
