@@ -50,15 +50,11 @@ The environment includes:
 
 - [Azure VM Deployment](#azure-vm-deployment)
 - [Active Directory Domain Services Setup](#active-directory-domain-services-setup)
-- [DNS Configuration](#dns-configuration)
-- [Domain Join Troubleshooting](#domain-join-troubleshooting)
+- [DNS Configuration and Domain Join Troubleshooting](#dns-configuration-and-domain-join-troubleshooting)
 - [User and Group Management](#user-and-group-management)
-- [Authentication vs Authorization](#authentication-vs-authorization)
-- [Account Lockout Troubleshooting](#account-lockout-troubleshooting)
-- [DNS Failure Troubleshooting](#dns-failure-troubleshooting)
+- [Help Desk Scenarios](#help-desk-scenarios)
 - [File Shares and Permissions](#file-shares-and-permissions)
 - [Group Policy Configuration](#group-policy-configuration)
-- [Lessons Learned](#lessons-learned)
 
 ---
 
@@ -123,11 +119,11 @@ _Add screenshots here_
 
 ---
 
-# DNS Configuration
+# DNS Configuration and Domain Join Troubleshooting
 
 ## Objective
 
-Configure internal DNS communication between client and Domain Controller.
+Configure internal DNS communication and join the client workstation to the domain.
 
 ## Tasks Completed
 
@@ -142,27 +138,6 @@ nslookup helpdesklab.local
 ping helpdesklab.local
 ```
 
-## Skills Learned
-
-- DNS troubleshooting
-- Internal name resolution
-- Active Directory dependencies
-- Network diagnostics
-
-## Screenshots
-
-_Add screenshots here_
-
----
-
-# Domain Join Troubleshooting
-
-## Objective
-
-Join Windows client to Active Directory domain.
-
-## Tasks Completed
-
 - Joined client-1 to:
 
 ```powershell
@@ -172,12 +147,44 @@ helpdesklab.local
 - Verified domain authentication
 - Troubleshot DNS-related domain join issues
 
+## Troubleshooting Scenario
+
+An intentional DNS failure was created by configuring the client machine to use Google DNS:
+
+```powershell
+8.8.8.8
+```
+
+This caused:
+- Domain resolution failures
+- Internal resource access issues
+- Active Directory communication problems
+
+## Troubleshooting Performed
+
+```powershell
+ipconfig /all
+```
+
+```powershell
+nslookup helpdesklab.local
+```
+
+```powershell
+ipconfig /flushdns
+```
+
+## Resolution
+
+Reconfigured client DNS settings to use the Domain Controller private IP address.
+
 ## Skills Learned
 
+- DNS troubleshooting
 - Domain joins
-- Authentication workflows
-- DNS dependency analysis
-- Enterprise workstation management
+- Active Directory dependency analysis
+- Network diagnostics
+- Root cause analysis
 
 ## Screenshots
 
@@ -231,49 +238,29 @@ _Add screenshots here_
 
 ---
 
-# Authentication vs Authorization
+# Help Desk Scenarios
 
-## Scenario
+## Authentication vs Authorization
 
-Successfully authenticated domain users but received:
+A domain user successfully authenticated but received the following Remote Desktop error:
 
 ```powershell
 The connection was denied because the user account is not authorized for remote login.
 ```
 
-## Troubleshooting
+### Resolution
 
-- Verified domain authentication worked
+- Verified domain authentication functionality
 - Identified missing Remote Desktop permissions
-- Added security groups to Remote Desktop Users
-
-## Skills Learned
-
-- Authentication vs Authorization
-- Remote Desktop permissions
-- Enterprise access control
-
-## Screenshots
-
-_Add screenshots here_
+- Added appropriate groups to Remote Desktop Users
 
 ---
 
-# Account Lockout Troubleshooting
+## Account Lockout Troubleshooting
 
-## Scenario
+A user account was intentionally locked out after multiple failed login attempts.
 
-Simulated user account lockout after multiple failed login attempts.
-
-## Tasks Completed
-
-- Configured Account Lockout Policy using Group Policy
-- Locked user account intentionally
-- Investigated account status
-- Unlocked account in Active Directory
-- Reset user password
-
-## Commands Used
+### Troubleshooting Performed
 
 ```powershell
 Search-ADAccount -LockedOut
@@ -283,64 +270,52 @@ Search-ADAccount -LockedOut
 gpupdate /force
 ```
 
-## Skills Learned
+### Resolution
 
-- Group Policy
-- Account lockout troubleshooting
-- Password resets
-- Help Desk recovery workflows
-
-## Screenshots
-
-_Add screenshots here_
+- Unlocked user account
+- Reset user password
+- Verified restored access
 
 ---
 
-# DNS Failure Troubleshooting
+## Password Reset Scenario
 
-## Scenario
+Simulated a common enterprise Help Desk password reset request.
 
-Simulated enterprise DNS outage by changing client DNS server to Google DNS:
+### Tasks Performed
 
-```powershell
-8.8.8.8
-```
+- Reset user password in Active Directory
+- Verified successful login
+- Reviewed account status
 
-## Symptoms
+---
 
-- Failed domain resolution
-- Unable to locate Active Directory domain
-- RDP hostname failures
-- Internal resource access issues
+## DNS Failure Scenario
 
-## Troubleshooting Performed
+Simulated enterprise DNS outage by configuring the client to use public DNS instead of internal Active Directory DNS.
 
-```powershell
-nslookup helpdesklab.local
-```
+### Symptoms
 
-```powershell
-ipconfig /all
-```
+- Failed domain lookups
+- Unable to resolve internal resources
+- Domain communication failures
 
-```powershell
-ipconfig /flushdns
-```
+### Root Cause
 
-## Root Cause
+Incorrect DNS server configuration.
 
-Client configured to use public DNS instead of internal Active Directory DNS server.
+### Resolution
 
-## Resolution
-
-Reconfigured DNS to use Domain Controller private IP.
+Reconfigured client DNS to use internal Active Directory DNS server.
 
 ## Skills Learned
 
+- Authentication troubleshooting
+- Authorization troubleshooting
+- Password resets
 - DNS troubleshooting
+- Help Desk workflows
 - Root cause analysis
-- Enterprise network diagnostics
-- Active Directory dependencies
 
 ## Screenshots
 
@@ -415,13 +390,13 @@ This project provided hands-on experience with:
 - Access control
 - Help Desk troubleshooting methodology
 
-The lab helped reinforce how heavily enterprise environments depend on:
+The lab reinforced how heavily enterprise environments depend on:
 
 - DNS
-- centralized authentication
-- identity management
-- permissions
-- proper troubleshooting workflows
+- Centralized authentication
+- Identity management
+- Permissions
+- Proper troubleshooting workflows
 
 ---
 
