@@ -172,7 +172,51 @@ helpdesklab.local
 
 ## Screenshots
 
-_Add screenshots here_
+### Server Manager Dashboard & Role Selection
+
+Overview of Server Manager and the Add Roles and Features Wizard with Active Directory Domain Services (AD DS) and DNS roles selected.
+
+<img width="1916" height="1079" alt="image" src="https://github.com/user-attachments/assets/6570c97d-f541-4dcd-b704-5825a0b911ac" />
+
+---
+
+### Post-Deployment Configuration
+
+Prompt to promote the server to a Domain Controller.
+
+<img width="340" height="244" alt="image" src="https://github.com/user-attachments/assets/f4899ac0-f37a-4e94-ae87-b8b18a07661f" />
+
+---
+
+### Deployment Configuration
+
+Adding a new forest and specifying the domain `helpdesklab.local`.
+
+<img width="1155" height="644" alt="image" src="https://github.com/user-attachments/assets/f5eec330-39a6-418b-b050-6af807fdfd6f" />
+
+---
+
+### Active Directory Users and Computers (ADUC)
+
+Shows Organizational Units (OUs) and user accounts.
+
+<img width="1094" height="426" alt="image" src="https://github.com/user-attachments/assets/ef74c4c7-9d37-416c-a479-390c0f721ec4" />
+
+---
+
+### DNS Manager
+
+Forward Lookup Zone and host records for internal domain resolution.
+
+<img width="1014" height="411" alt="image" src="https://github.com/user-attachments/assets/82bcd62b-1f7e-4ff2-9960-3f61b3c553fc" />
+
+---
+
+### PowerShell Verification
+
+Outputs from `Get-ADDomain` and `nslookup` verifying AD and DNS functionality.
+
+<img width="962" height="829" alt="image" src="https://github.com/user-attachments/assets/dbe46c58-19bc-4b3c-b111-84f0a1f9d340" />
 
 ---
 
@@ -245,7 +289,87 @@ Reconfigured client DNS settings to use the Domain Controller private IP address
 
 ## Screenshots
 
-_Add screenshots here_
+### 1. Client DNS Configuration
+
+Configured `client-1` to use the Domain Controller private IP address (`10.0.0.4`) as the preferred DNS server for internal domain communication.
+
+<img width="1614" height="858" alt="image" src="https://github.com/user-attachments/assets/849c48a6-643c-4fd4-94f1-0aafd949c222" />
+
+---
+
+### 2. DNS Verification
+
+Verified successful DNS resolution and communication with the internal Active Directory domain using:
+
+```powershell
+nslookup helpdesklab.local
+ping helpdesklab.local
+```
+
+<img width="1323" height="937" alt="image" src="https://github.com/user-attachments/assets/c78a1029-a57c-408d-8c6d-f26548ffdb52" />
+
+---
+
+### 3. Successful Domain Join
+
+Successfully joined `client-1` to the:
+
+```powershell
+helpdesklab.local
+```
+
+domain and verified the workstation was connected to the enterprise environment.
+
+<img width="404" height="461" alt="image" src="https://github.com/user-attachments/assets/0e6d6a2f-e6da-4b7e-8be3-b339a0834676" />
+
+---
+
+### 4. Verified Domain Authentication
+
+Verified successful domain authentication by logging into the client machine using a domain user account and validating the domain association through PowerShell.
+
+```powershell
+whoami
+systeminfo
+```
+
+<img width="1899" height="1021" alt="image" src="https://github.com/user-attachments/assets/864ec3ea-81b5-4359-b3e3-2e15280eb9c1" />
+
+---
+
+### 5. DNS Failure Simulation
+
+Simulated a DNS-related domain communication issue by intentionally configuring the client workstation to use Google DNS:
+
+```powershell
+8.8.8.8
+```
+
+This caused internal domain name resolution failures and Active Directory communication issues.
+
+<img width="1854" height="967" alt="image" src="https://github.com/user-attachments/assets/215ab0fb-c869-4b6e-9274-a462f774fe65" />
+
+---
+
+### 6. DNS Troubleshooting Commands
+
+Performed troubleshooting using common network diagnostic and DNS troubleshooting commands.
+
+```powershell
+ipconfig /all
+ipconfig /flushdns
+nslookup helpdesklab.local
+```
+
+<img width="1920" height="1069" alt="image" src="https://github.com/user-attachments/assets/e6255731-7a66-4093-aede-a34305050796" />
+
+---
+
+### 7. DNS Resolution / Fix
+
+Resolved the DNS communication issue by restoring the preferred DNS server back to the Domain Controller private IP address (`10.0.0.4`), restoring successful internal domain communication.
+
+<img width="1501" height="923" alt="image" src="https://github.com/user-attachments/assets/1c6e93be-a21a-4d2f-aef9-1ec7c10f401a" />
 
 ---
 
