@@ -82,7 +82,64 @@ Deploy enterprise infrastructure inside Microsoft Azure.
 
 ## Screenshots
 
-_Add screenshots here_
+### Azure Resource Group
+
+Created a dedicated Azure Resource Group to organize all infrastructure resources for the Active Directory lab environment.
+
+<img width="1687" height="544" alt="image" src="https://github.com/user-attachments/assets/840190e1-1ddc-471c-82af-fd17111acb3c" />
+
+---
+
+### Virtual Network and Subnet Configuration
+
+Configured an internal Azure Virtual Network (`hd-vnet`) to allow communication between the Domain Controller and client workstation.
+
+<img width="1683" height="555" alt="image" src="https://github.com/user-attachments/assets/e0099d95-9a01-4e1e-8170-242e37377b22" />
+
+---
+
+### Azure Virtual Machines
+
+Deployed two virtual machines inside Microsoft Azure:
+
+- `dc-1` — Windows Server 2022 Domain Controller
+- `client-1` — Windows 10/11 Domain-Joined Client
+
+Both systems were configured for remote administration and internal network communication.
+
+<img width="1687" height="630" alt="image" src="https://github.com/user-attachments/assets/61894701-b61a-43db-b30c-dfa78a98ee53" />
+
+---
+
+### Remote Desktop Connectivity
+
+Verified successful Remote Desktop Protocol (RDP) connectivity into the Azure virtual machines for remote administration and management.
+
+<img width="400" height="472" alt="image" src="https://github.com/user-attachments/assets/a39bd0cd-73de-42fe-bbef-ac62bd395dfd" />
+
+---
+
+### Remote Administration Session
+
+Successfully connected to the environment through RDP and verified workstation accessibility inside the enterprise lab environment.
+
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/3a227e5f-cbf3-4473-b7fb-b0d2b44c38d8" />
+
+---
+
+### Internal Network Communication Verification
+
+Verified internal network and DNS communication between systems using:
+
+```powershell
+nslookup helpdesklab.local
+ping helpdesklab.local
+ipconfig
+```
+
+This confirmed successful DNS resolution and communication between domain resources.
+
+<img width="1915" height="1075" alt="image" src="https://github.com/user-attachments/assets/d775d484-eadb-462b-84a3-fc5190d44788" />
 
 ---
 
