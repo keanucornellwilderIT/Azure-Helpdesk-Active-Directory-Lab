@@ -31,23 +31,19 @@ The goal of this project is to build hands-on experience with identity managemen
 ## ⚙️ Project Configuration Steps
 ### Step 1 - Create Azure Resources
 Configured Azure virtual machines and networking.
-
-📸 Screenshot here
-
+<img width="1687" height="544" alt="Screenshot 2026-05-23 015512" src="https://github.com/user-attachments/assets/6c2309b0-30a4-4b49-99b8-483bb55dca94" />
+<img width="1691" height="587" alt="Screenshot 2026-05-23 015726" src="https://github.com/user-attachments/assets/c526b5fd-e372-4765-9e9e-6304570c7429" />
 ### Step 2 - Configure Domain Controller
 Configured DNS settings and prepared the server for Active Directory installation.
-
-📸 Screenshot here
-
+<img width="772" height="648" alt="image" src="https://github.com/user-attachments/assets/c2ea64fb-4cdc-4bb7-81c2-334746ff9835" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ff979277-5f7d-4b18-b08a-d124a124dc06" />
 ### Step 3 - Install Active Directory Domain Services
 Installed AD DS and promoted the server to a Domain Controller.
-
-📸 Screenshot here
-
+<img width="340" height="244" alt="Screenshot 2026-05-23 021650" src="https://github.com/user-attachments/assets/5e1e7d41-4052-4f79-b5b0-9ae4c9838773" />
+<img width="745" height="327" alt="image" src="https://github.com/user-attachments/assets/a5b86c62-9928-4fe9-b809-b95788ee90cc" />
 ### Step 4 - Join Client Machine to Domain
 Configured client DNS settings and joined the system to the domain.
-
-📸 Screenshot here
+<img width="896" height="696" alt="image" src="https://github.com/user-attachments/assets/80bab558-d6fc-42a5-9d30-d681fed0a78e" />
 
 ---
 
@@ -66,9 +62,8 @@ Client machine was unable to join the Active Directory domain.
 
 #### Root Cause
 Incorrect DNS configuration prevented domain resolution.
-
-📸 Screenshot here
-
+<img width="1085" height="910" alt="image" src="https://github.com/user-attachments/assets/90685dce-743f-4852-b3de-b3f9ef3b730f" />
+<img width="950" height="580" alt="image" src="https://github.com/user-attachments/assets/1a912beb-94d4-415a-8a88-084d47489eee" />
 #### Resolution
 Updated DNS settings to use the Domain Controller IP address and successfully joined the domain.
 
@@ -92,9 +87,9 @@ New employees required access to company resources based on department roles.
 
 #### Root Cause
 Users and security groups had not been configured for role-based access management.
-
-📸 Screenshot here
-
+<img width="585" height="326" alt="image" src="https://github.com/user-attachments/assets/b2167836-7a09-4282-9d3c-f513903aaaf4" />
+<img width="559" height="330" alt="image" src="https://github.com/user-attachments/assets/19dd7993-e7e6-41ed-9d5d-af8df40543e9" />
+<img width="603" height="321" alt="image" src="https://github.com/user-attachments/assets/58e72e6a-55ae-44d8-b7f5-4242351db097" />
 #### Resolution
 Configured Active Directory users and groups to align with organizational access requirements.
 
@@ -118,9 +113,11 @@ User was unable to log in after multiple failed password attempts.
 
 #### Root Cause
 Account was locked due to repeated failed login attempts.
-
-📸 Screenshot here
-
+<img width="545" height="506" alt="image" src="https://github.com/user-attachments/assets/80e0e66a-dbf8-4ba6-89ff-61d02e06ae6d" />
+Unlocking with AD
+<img width="1114" height="841" alt="image" src="https://github.com/user-attachments/assets/e6ba07d3-db84-4afc-b0f6-613610ece160" />
+Unlocking with Powershell
+<img width="848" height="438" alt="image" src="https://github.com/user-attachments/assets/34176cd8-ae3c-458d-bb47-72fa6bc84216" />
 #### Resolution
 Unlocked the user account and verified successful login access.
 
@@ -145,7 +142,21 @@ The organization required standardized security and desktop settings across doma
 #### Root Cause
 Domain systems lacked centralized configuration management.
 
-📸 Screenshot here
+### New GPO Created
+Creation of the `Company Password Policy` Group Policy Object.
+<img width="829" height="518" alt="image" src="https://github.com/user-attachments/assets/fc8c582f-5c37-4c1f-acad-ab4285446798" />
+### Password Policy Configured
+Configured minimum password length policy within the Group Policy Management Editor.
+<img width="1193" height="774" alt="image" src="https://github.com/user-attachments/assets/0be34577-7da9-4c88-a0f1-91fe1c718770" />
+### Linked GPO
+Shows the `Company Password Policy` linked to the `helpdesklab.local` domain.
+
+<img width="444" height="409" alt="image" src="https://github.com/user-attachments/assets/5b2d8831-376a-4b2c-91a9-cfc09dd190ef" />
+<img width="360" height="199" alt="image" src="https://github.com/user-attachments/assets/2ebd481a-746f-4e24-9179-92e804182ea8" />
+
+### GPUpdate Success
+Verified successful Group Policy deployment on `client-1` using `gpupdate /force`.
+<img width="725" height="274" alt="image" src="https://github.com/user-attachments/assets/361f8478-06e6-4e7f-ad84-6d5398384e7b" />
 
 #### Resolution
 Configured and applied Group Policy settings successfully across domain devices.
