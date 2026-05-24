@@ -1,13 +1,9 @@
 # 🖥️ Azure Active Directory Help Desk Lab
 
----
-
 ## 📌 Overview
 This project simulates real-world Active Directory administration and help desk troubleshooting tasks within a Windows Server and Azure environment. The lab focuses on configuring domain services, troubleshooting domain join issues, managing users and groups, resolving account lockouts, and applying Group Policy settings commonly handled by IT support specialists and system administrators.
 
 The goal of this project is to build hands-on experience with identity management, authentication troubleshooting, Windows administration, and enterprise support workflows.
-
----
 
 ## 🎯 Objectives
 - Configure Active Directory Domain Services
@@ -17,8 +13,6 @@ The goal of this project is to build hands-on experience with identity managemen
 - Configure Group Policy settings
 - Practice real-world help desk workflows
 
----
-
 ## 🧰 Technologies Used
 - Microsoft Azure
 - Windows Server 2022
@@ -27,16 +21,12 @@ The goal of this project is to build hands-on experience with identity managemen
 - DNS
 - PowerShell
 
----
-
 ## 🏗️ Environment Setup
 - Domain Controller VM
 - Client VM
 - Virtual Network
 - DNS Configuration
 - Domain Connectivity
-
----
 
 ## ⚙️ Project Configuration Steps
 ### Step 1 - Create Azure Resources
@@ -77,6 +67,8 @@ Client machine was unable to join the Active Directory domain.
 #### Root Cause
 Incorrect DNS configuration prevented domain resolution.
 
+📸 Screenshot here
+
 #### Resolution
 Updated DNS settings to use the Domain Controller IP address and successfully joined the domain.
 
@@ -85,9 +77,6 @@ Updated DNS settings to use the Domain Controller IP address and successfully jo
 - Domain join troubleshooting
 - Network diagnostics
 - Windows networking
-
-📸 Screenshot here
-
 ---
 
 ### Scenario 2 - User & Group Management
@@ -104,6 +93,8 @@ New employees required access to company resources based on department roles.
 #### Root Cause
 Users and security groups had not been configured for role-based access management.
 
+📸 Screenshot here
+
 #### Resolution
 Configured Active Directory users and groups to align with organizational access requirements.
 
@@ -112,9 +103,6 @@ Configured Active Directory users and groups to align with organizational access
 - Security group management
 - Access control
 - Identity management
-
-📸 Screenshot here
-
 ---
 
 ### Scenario 3 - Account Lockout Troubleshooting
@@ -131,6 +119,8 @@ User was unable to log in after multiple failed password attempts.
 #### Root Cause
 Account was locked due to repeated failed login attempts.
 
+📸 Screenshot here
+
 #### Resolution
 Unlocked the user account and verified successful login access.
 
@@ -139,9 +129,6 @@ Unlocked the user account and verified successful login access.
 - Active Directory administration
 - Authentication troubleshooting
 - User support
-
-📸 Screenshot here
-
 ---
 
 ### Scenario 4 - Group Policy Configuration
@@ -158,6 +145,8 @@ The organization required standardized security and desktop settings across doma
 #### Root Cause
 Domain systems lacked centralized configuration management.
 
+📸 Screenshot here
+
 #### Resolution
 Configured and applied Group Policy settings successfully across domain devices.
 
@@ -166,9 +155,6 @@ Configured and applied Group Policy settings successfully across domain devices.
 - Windows administration
 - Enterprise configuration management
 - Security policy configuration
-
-📸 Screenshot here
-
 ---
 
 ## 🧠 Key Help Desk Skills Demonstrated
@@ -181,14 +167,10 @@ Configured and applied Group Policy settings successfully across domain devices.
 - Root Cause Analysis
 - Technical Documentation
 
----
-
 ## 📖 Lessons Learned
 This project improved my understanding of Active Directory administration and enterprise help desk workflows within Azure and Windows Server environments. I gained hands-on experience configuring domain services, troubleshooting authentication issues, managing users and groups, resolving account lockouts, and applying Group Policy configurations commonly used in enterprise IT operations.
 
 The lab also strengthened my troubleshooting methodology, documentation practices, and system administration skills.
-
----
 
 ## 🚀 Future Improvements
 - Configure Multi-Factor Authentication (MFA)
