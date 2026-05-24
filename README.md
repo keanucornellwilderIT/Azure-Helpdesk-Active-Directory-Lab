@@ -39,8 +39,10 @@ Configured DNS settings and prepared the server for Active Directory installatio
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ff979277-5f7d-4b18-b08a-d124a124dc06" />
 ### Step 3 - Install Active Directory Domain Services
 Installed AD DS and promoted the server to a Domain Controller.
+
 <img width="340" height="244" alt="Screenshot 2026-05-23 021650" src="https://github.com/user-attachments/assets/5e1e7d41-4052-4f79-b5b0-9ae4c9838773" />
 <img width="745" height="327" alt="image" src="https://github.com/user-attachments/assets/a5b86c62-9928-4fe9-b809-b95788ee90cc" />
+
 ### Step 4 - Join Client Machine to Domain
 Configured client DNS settings and joined the system to the domain.
 <img width="896" height="696" alt="image" src="https://github.com/user-attachments/assets/80bab558-d6fc-42a5-9d30-d681fed0a78e" />
@@ -62,8 +64,19 @@ Client machine was unable to join the Active Directory domain.
 
 #### Root Cause
 Incorrect DNS configuration prevented domain resolution.
+### Client DNS Configuration
+Shows DNS settings and IP configuration on `client-1` using `ipconfig /all`.
 <img width="1085" height="910" alt="image" src="https://github.com/user-attachments/assets/90685dce-743f-4852-b3de-b3f9ef3b730f" />
+
+### Ping Test
+Verified successful communication between `client-1` and `dc-1` using ping commands.
 <img width="950" height="580" alt="image" src="https://github.com/user-attachments/assets/1a912beb-94d4-415a-8a88-084d47489eee" />
+
+### Domain Join Success
+Shows `client-1` successfully joined to the `helpdesklab.local` domain.
+
+<img width="410" height="465" alt="image" src="https://github.com/user-attachments/assets/f2386d3a-d9f8-4c6e-8fc9-226cdcaba4dd" />
+
 #### Resolution
 Updated DNS settings to use the Domain Controller IP address and successfully joined the domain.
 
@@ -87,9 +100,19 @@ New employees required access to company resources based on department roles.
 
 #### Root Cause
 Users and security groups had not been configured for role-based access management.
+
+### Active Directory Groups & Users:
 <img width="585" height="326" alt="image" src="https://github.com/user-attachments/assets/b2167836-7a09-4282-9d3c-f513903aaaf4" />
 <img width="559" height="330" alt="image" src="https://github.com/user-attachments/assets/19dd7993-e7e6-41ed-9d5d-af8df40543e9" />
 <img width="603" height="321" alt="image" src="https://github.com/user-attachments/assets/58e72e6a-55ae-44d8-b7f5-4242351db097" />
+
+### User Group Membership
+Shows users assigned to appropriate department groups.
+
+<img width="400" height="451" alt="image" src="https://github.com/user-attachments/assets/226f794a-a25b-4f93-a14a-791dbc958b81" />
+<img width="396" height="451" alt="image" src="https://github.com/user-attachments/assets/c2850378-91cb-4793-97f6-a5d4e8d1594a" />
+<img width="398" height="452" alt="image" src="https://github.com/user-attachments/assets/ba02931e-7270-4aa6-bbc1-b8597e76b0ab" />
+
 #### Resolution
 Configured Active Directory users and groups to align with organizational access requirements.
 
@@ -113,11 +136,19 @@ User was unable to log in after multiple failed password attempts.
 
 #### Root Cause
 Account was locked due to repeated failed login attempts.
+
+### Locked User Account
+Shows the user account locked within Active Directory Users and Computers.
 <img width="545" height="506" alt="image" src="https://github.com/user-attachments/assets/80e0e66a-dbf8-4ba6-89ff-61d02e06ae6d" />
-Unlocking with AD
+
+### Unlocking with AD:
+
 <img width="1114" height="841" alt="image" src="https://github.com/user-attachments/assets/e6ba07d3-db84-4afc-b0f6-613610ece160" />
-Unlocking with Powershell
+
+### Unlocking with Powershell:
+
 <img width="848" height="438" alt="image" src="https://github.com/user-attachments/assets/34176cd8-ae3c-458d-bb47-72fa6bc84216" />
+
 #### Resolution
 Unlocked the user account and verified successful login access.
 
