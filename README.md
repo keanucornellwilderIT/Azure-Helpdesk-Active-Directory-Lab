@@ -32,7 +32,7 @@ The goal of this project is to build hands-on experience with identity managemen
 ### Step 1 - Create Azure Resources
 Configured Azure virtual machines and networking.
 <img width="1687" height="544" alt="Screenshot 2026-05-23 015512" src="https://github.com/user-attachments/assets/6c2309b0-30a4-4b49-99b8-483bb55dca94" />
-<img width="1691" height="587" alt="Screenshot 2026-05-23 015726" src="https://github.com/user-attachments/assets/c526b5fd-e372-4765-9e9e-6304570c7429" />
+<img width="769" height="375" alt="image" src="https://github.com/user-attachments/assets/668e766a-f1d1-452b-a2fe-a5a19334d305" />
 ### Step 2 - Configure Domain Controller
 Configured DNS settings and prepared the server for Active Directory installation.
 <img width="772" height="648" alt="image" src="https://github.com/user-attachments/assets/c2ea64fb-4cdc-4bb7-81c2-334746ff9835" />
