@@ -1,55 +1,51 @@
-# 🖥️ Azure Active Directory Help Desk Lab
+# Azure Active Directory Help Desk Lab
 
-## 📌 Overview
+### Overview
 This project simulates real-world Active Directory administration and help desk troubleshooting tasks within a Windows Server and Azure environment. The lab focuses on configuring domain services, troubleshooting domain join issues, managing users and groups, resolving account lockouts, and applying Group Policy settings commonly handled by IT support specialists and system administrators.
 
 The goal of this project is to build hands-on experience with identity management, authentication troubleshooting, Windows administration, and enterprise support workflows.
+### Business Impact
+Resolved shared resource and printing issues impacting end-user productivity across the domain environment. Improved access to centralized company resources by restoring mapped network drive functionality, troubleshooting SMB connectivity, managing NTFS permissions, and resolving print spooler failures affecting enterprise printer services.
 
-## 🎯 Objectives
-- Configure Active Directory Domain Services
-- Troubleshoot domain join issues
-- Manage users and security groups
-- Resolve account lockout issues
-- Configure Group Policy settings
-- Practice real-world help desk workflows
+### Key Help Desk Skills Demonstrated
+- Active Directory Administration
+- DNS Troubleshooting
+- Group Policy Management
+- User & Group Administration
+- Authentication Troubleshooting
+- Windows Server Administration
 
-## 🧰 Technologies Used
-- Microsoft Azure
+### Technologies Used
+- Azure
 - Windows Server 2022
 - Windows 10/11
 - Active Directory
 - DNS
 - PowerShell
 
-## 🏗️ Environment Setup
+### Environment Setup
 - Domain Controller VM
 - Client VM
 - Virtual Network
 - DNS Configuration
 - Domain Connectivity
 
-## ⚙️ Project Configuration Steps
+### Project Configuration Steps
 ### Step 1 - Create Azure Resources
 Configured Azure virtual machines and networking.
-<img width="1687" height="544" alt="Screenshot 2026-05-23 015512" src="https://github.com/user-attachments/assets/6c2309b0-30a4-4b49-99b8-483bb55dca94" />
-<img width="769" height="375" alt="image" src="https://github.com/user-attachments/assets/668e766a-f1d1-452b-a2fe-a5a19334d305" />
+
 ### Step 2 - Configure Domain Controller
 Configured DNS settings and prepared the server for Active Directory installation.
-<img width="772" height="648" alt="image" src="https://github.com/user-attachments/assets/c2ea64fb-4cdc-4bb7-81c2-334746ff9835" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ff979277-5f7d-4b18-b08a-d124a124dc06" />
+
 ### Step 3 - Install Active Directory Domain Services
 Installed AD DS and promoted the server to a Domain Controller.
 
-<img width="340" height="244" alt="Screenshot 2026-05-23 021650" src="https://github.com/user-attachments/assets/5e1e7d41-4052-4f79-b5b0-9ae4c9838773" />
-<img width="745" height="327" alt="image" src="https://github.com/user-attachments/assets/a5b86c62-9928-4fe9-b809-b95788ee90cc" />
-
 ### Step 4 - Join Client Machine to Domain
 Configured client DNS settings and joined the system to the domain.
-<img width="896" height="696" alt="image" src="https://github.com/user-attachments/assets/80bab558-d6fc-42a5-9d30-d681fed0a78e" />
 
 ---
 
-## 🛠️ Help Desk Scenarios
+## Help Desk Scenarios
 
 ### Scenario 1 - Domain Join Troubleshooting
 
@@ -64,13 +60,13 @@ Configured client DNS settings and joined the system to the domain.
 
 #### Root Cause
 `client-1` was configured with an incorrect DNS server, preventing the workstation from locating and communicating with the internal Active Directory Domain Controller and internal network resources hosted within the domain environment.
-
-<img width="361" height="463" alt="image" src="https://github.com/user-attachments/assets/6dac0cb3-504e-4e23-90bb-4b11949d3ef9" />
+### Incorrect DNS Config
 <img width="802" height="636" alt="image" src="https://github.com/user-attachments/assets/8895aaea-d09b-4518-90ad-ae71b7f27f91" />
-<img width="567" height="630" alt="image" src="https://github.com/user-attachments/assets/550fadd5-d028-401b-b852-577e464c40f3" />
+
+### Corrected DNS 
+<img width="398" height="454" alt="image" src="https://github.com/user-attachments/assets/c4add8c1-23b5-4266-bb2b-46bf7a306daf" />
 
 ### Command Prompt DNS Check
-<img width="1085" height="910" alt="image" src="https://github.com/user-attachments/assets/90685dce-743f-4852-b3de-b3f9ef3b730f" />
 <img width="950" height="580" alt="image" src="https://github.com/user-attachments/assets/1a912beb-94d4-415a-8a88-084d47489eee" />
 
 ### Domain Join Success
@@ -113,11 +109,6 @@ Users and security groups had not been configured for role-based access manageme
 #### Resolution
 Configured Active Directory users and departmental security groups successfully, allowing employees to access appropriate resources based on their job roles and department permissions.
 
-#### Skills Learned
-- User administration
-- Security group management
-- Access control
-- Identity management
 ---
 
 ### Scenario 3 - Account Lockout Troubleshooting
@@ -150,11 +141,6 @@ Shows the user account locked within Active Directory Users and Computers.
 #### Resolution
 Unlocked the `sjohnson` account within Active Directory Users and Computers and verified successful login access to the domain environment.
 
-#### Skills Learned
-- Account lockout troubleshooting
-- Active Directory administration
-- Authentication troubleshooting
-- User support
 ---
 
 ### Scenario 4 - Group Policy Configuration
@@ -180,7 +166,6 @@ Configured minimum password length policy within the Group Policy Management Edi
 <img width="1193" height="774" alt="image" src="https://github.com/user-attachments/assets/0be34577-7da9-4c88-a0f1-91fe1c718770" />
 
 ### Linked GPO
-<img width="444" height="409" alt="image" src="https://github.com/user-attachments/assets/5b2d8831-376a-4b2c-91a9-cfc09dd190ef" />
 <img width="360" height="199" alt="image" src="https://github.com/user-attachments/assets/2ebd481a-746f-4e24-9179-92e804182ea8" />
 
 ### GPUpdate Success
@@ -190,29 +175,14 @@ Verified successful Group Policy deployment on `client-1` using `gpupdate /force
 #### Resolution
 Configured and applied Group Policy settings successfully across domain devices.
 
-#### Skills Learned
-- Group Policy Management
-- Windows administration
-- Enterprise configuration management
-- Security policy configuration
 ---
 
-## 🧠 Key Help Desk Skills Demonstrated
-- Active Directory Administration
-- DNS Troubleshooting
-- Group Policy Management
-- User & Group Administration
-- Authentication Troubleshooting
-- Windows Server Administration
-- Root Cause Analysis
-- Technical Documentation
-
-## 📖 Lessons Learned
+### Lessons Learned
 This project improved my understanding of Active Directory administration and enterprise help desk workflows within Azure and Windows Server environments. I gained hands-on experience configuring domain services, troubleshooting authentication issues, managing users and groups, resolving account lockouts, and applying Group Policy configurations commonly used in enterprise IT operations.
 
 The lab also strengthened my troubleshooting methodology, documentation practices, and system administration skills.
 
-## 🚀 Future Improvements
+### Future Improvements
 - Configure Multi-Factor Authentication (MFA)
 - Implement Azure AD Connect
 - Add PowerShell automation scripts
