@@ -54,8 +54,7 @@ Configured client DNS settings and joined the system to the domain.
 ### Scenario 1 - Domain Join Troubleshooting
 
 #### Problem
-`edavis` was unable to access the `helpdesklab.local` domain on `client-1` because the client machine could not successfully communicate with the Domain Controller.
-
+`client-1` was unable to communicate with the `helpdesklab.local` domain because the workstation was configured with an incorrect DNS server instead of the internal DNS service hosted on `dc-1`. As a result, `edavis` could not authenticate properly, access internal resources, or communicate with domain services across the environment.
 #### Troubleshooting
 - Verified DNS configuration on `client-1`
 - Tested network connectivity between `client-1` and `dc-1`
@@ -64,8 +63,7 @@ Configured client DNS settings and joined the system to the domain.
 - Reviewed domain join configuration settings
 
 #### Root Cause
-Incorrect DNS configuration prevented the client machine from resolving and communicating with the `helpdesklab.local` domain controller.
-### Client DNS Configuration
+`client-1` was configured with an incorrect DNS server, preventing the workstation from locating and communicating with the internal Active Directory Domain Controller and internal network resources hosted within the domain environment.
 
 <img width="361" height="463" alt="image" src="https://github.com/user-attachments/assets/6dac0cb3-504e-4e23-90bb-4b11949d3ef9" />
 <img width="802" height="636" alt="image" src="https://github.com/user-attachments/assets/8895aaea-d09b-4518-90ad-ae71b7f27f91" />
@@ -79,7 +77,7 @@ Incorrect DNS configuration prevented the client machine from resolving and comm
 <img width="410" height="465" alt="image" src="https://github.com/user-attachments/assets/f2386d3a-d9f8-4c6e-8fc9-226cdcaba4dd" />
 
 #### Resolution
-Updated DNS settings to use the Domain Controller IP address and successfully restored domain communication and domain access for `edavis`.
+Updated the client DNS settings to use the internal DNS service hosted on `dc-1`, restoring communication with the `helpdesklab.local` domain, internal resources, and Active Directory authentication services.
 
 #### Skills Learned
 - DNS troubleshooting
@@ -91,7 +89,7 @@ Updated DNS settings to use the Domain Controller IP address and successfully re
 ### Scenario 2 - User & Group Management
 
 #### Problem
-New employees required access to company resources based on department roles.
+New employees `sjohnson`, `edavis`, and `mchen` required access to company resources based on their department roles within the `helpdesklab.local` domain environment, but user accounts and group permissions had not yet been configured properly.
 
 #### Troubleshooting
 - Created Active Directory users
@@ -108,14 +106,12 @@ Users and security groups had not been configured for role-based access manageme
 <img width="603" height="321" alt="image" src="https://github.com/user-attachments/assets/58e72e6a-55ae-44d8-b7f5-4242351db097" />
 
 ### User Group Membership
-Shows users assigned to appropriate department groups.
-
 <img width="400" height="451" alt="image" src="https://github.com/user-attachments/assets/226f794a-a25b-4f93-a14a-791dbc958b81" />
 <img width="396" height="451" alt="image" src="https://github.com/user-attachments/assets/c2850378-91cb-4793-97f6-a5d4e8d1594a" />
 <img width="398" height="452" alt="image" src="https://github.com/user-attachments/assets/ba02931e-7270-4aa6-bbc1-b8597e76b0ab" />
 
 #### Resolution
-Unlocked the `sjohnson` account within Active Directory Users and Computers and verified successful login access to the domain environment.
+Configured Active Directory users and departmental security groups successfully, allowing employees to access appropriate resources based on their job roles and department permissions.
 
 #### Skills Learned
 - User administration
@@ -178,12 +174,12 @@ Domain systems lacked centralized configuration management.
 ### New GPO Created
 Creation of the `Company Password Policy` Group Policy Object.
 <img width="829" height="518" alt="image" src="https://github.com/user-attachments/assets/fc8c582f-5c37-4c1f-acad-ab4285446798" />
+
 ### Password Policy Configured
 Configured minimum password length policy within the Group Policy Management Editor.
 <img width="1193" height="774" alt="image" src="https://github.com/user-attachments/assets/0be34577-7da9-4c88-a0f1-91fe1c718770" />
-### Linked GPO
-Shows the `Company Password Policy` linked to the `helpdesklab.local` domain.
 
+### Linked GPO
 <img width="444" height="409" alt="image" src="https://github.com/user-attachments/assets/5b2d8831-376a-4b2c-91a9-cfc09dd190ef" />
 <img width="360" height="199" alt="image" src="https://github.com/user-attachments/assets/2ebd481a-746f-4e24-9179-92e804182ea8" />
 
