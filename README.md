@@ -54,27 +54,28 @@ Configured client DNS settings and joined the system to the domain.
 ### Scenario 1 - Domain Join Troubleshooting
 
 #### Problem
-Client machine was unable to join the Active Directory domain.
+`edavis` was unable to access the `helpdesklab.local` domain on `client-1` because the client machine could not successfully communicate with the Domain Controller.
 
 #### Troubleshooting
-- Verified DNS configuration
-- Tested network connectivity
-- Reviewed IP settings using ipconfig /all
-- Confirmed Domain Controller communication
+- Verified DNS configuration on `client-1`
+- Tested network connectivity between `client-1` and `dc-1`
+- Reviewed IP settings using `ipconfig /all`
+- Confirmed Domain Controller communication using `ping dc-1`
+- Reviewed domain join configuration settings
 
 #### Root Cause
-Incorrect DNS configuration prevented domain resolution.
+Incorrect DNS configuration prevented the client machine from resolving and communicating with the `helpdesklab.local` domain controller.
 ### Client DNS Configuration
-Shows DNS settings and IP configuration on `client-1` using `ipconfig /all`.
-<img width="1085" height="910" alt="image" src="https://github.com/user-attachments/assets/90685dce-743f-4852-b3de-b3f9ef3b730f" />
 
-### Ping Test
-Verified successful communication between `client-1` and `dc-1` using ping commands.
+<img width="361" height="463" alt="image" src="https://github.com/user-attachments/assets/6dac0cb3-504e-4e23-90bb-4b11949d3ef9" />
+<img width="802" height="636" alt="image" src="https://github.com/user-attachments/assets/8895aaea-d09b-4518-90ad-ae71b7f27f91" />
+<img width="567" height="630" alt="image" src="https://github.com/user-attachments/assets/550fadd5-d028-401b-b852-577e464c40f3" />
+
+### Command Prompt DNS Check
+<img width="1085" height="910" alt="image" src="https://github.com/user-attachments/assets/90685dce-743f-4852-b3de-b3f9ef3b730f" />
 <img width="950" height="580" alt="image" src="https://github.com/user-attachments/assets/1a912beb-94d4-415a-8a88-084d47489eee" />
 
 ### Domain Join Success
-Shows `client-1` successfully joined to the `helpdesklab.local` domain.
-
 <img width="410" height="465" alt="image" src="https://github.com/user-attachments/assets/f2386d3a-d9f8-4c6e-8fc9-226cdcaba4dd" />
 
 #### Resolution
@@ -126,16 +127,17 @@ Configured Active Directory users and groups to align with organizational access
 ### Scenario 3 - Account Lockout Troubleshooting
 
 #### Problem
-User was unable to log in after multiple failed password attempts.
+`sjohnson` was unable to log into the `helpdesklab.local` domain after multiple failed password attempts on `client-1`.
 
 #### Troubleshooting
-- Reviewed Active Directory Users and Computers
+- Reviewed the user account within Active Directory Users and Computers
 - Verified account lockout status
 - Checked password policy configuration
-- Tested user authentication
+- Reviewed authentication and login attempts
+- Tested user authentication after remediation
 
 #### Root Cause
-Account was locked due to repeated failed login attempts.
+The `sjohnson` account became locked due to repeated failed login attempts that triggered the domain account lockout policy.
 
 ### Locked User Account
 Shows the user account locked within Active Directory Users and Computers.
