@@ -79,7 +79,7 @@ Incorrect DNS configuration prevented the client machine from resolving and comm
 <img width="410" height="465" alt="image" src="https://github.com/user-attachments/assets/f2386d3a-d9f8-4c6e-8fc9-226cdcaba4dd" />
 
 #### Resolution
-Updated DNS settings to use the Domain Controller IP address and successfully joined the domain.
+Updated DNS settings to use the Domain Controller IP address and successfully restored domain communication and domain access for `edavis`.
 
 #### Skills Learned
 - DNS troubleshooting
@@ -115,7 +115,7 @@ Shows users assigned to appropriate department groups.
 <img width="398" height="452" alt="image" src="https://github.com/user-attachments/assets/ba02931e-7270-4aa6-bbc1-b8597e76b0ab" />
 
 #### Resolution
-Configured Active Directory users and groups to align with organizational access requirements.
+Unlocked the `sjohnson` account within Active Directory Users and Computers and verified successful login access to the domain environment.
 
 #### Skills Learned
 - User administration
@@ -152,7 +152,7 @@ Shows the user account locked within Active Directory Users and Computers.
 <img width="848" height="438" alt="image" src="https://github.com/user-attachments/assets/34176cd8-ae3c-458d-bb47-72fa6bc84216" />
 
 #### Resolution
-Unlocked the user account and verified successful login access.
+Unlocked the `sjohnson` account within Active Directory Users and Computers and verified successful login access to the domain environment.
 
 #### Skills Learned
 - Account lockout troubleshooting
