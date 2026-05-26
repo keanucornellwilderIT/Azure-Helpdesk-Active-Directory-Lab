@@ -33,13 +33,10 @@ Resolved shared resource and printing issues impacting end-user productivity acr
 ### Project Configuration Steps
 ### Step 1 - Create Azure Resources
 Configured Azure virtual machines and networking.
-
 ### Step 2 - Configure Domain Controller
 Configured DNS settings and prepared the server for Active Directory installation.
-
 ### Step 3 - Install Active Directory Domain Services
 Installed AD DS and promoted the server to a Domain Controller.
-
 ### Step 4 - Join Client Machine to Domain
 Configured client DNS settings and joined the system to the domain.
 
@@ -72,14 +69,9 @@ Configured client DNS settings and joined the system to the domain.
 ### Domain Join Success
 <img width="410" height="465" alt="image" src="https://github.com/user-attachments/assets/f2386d3a-d9f8-4c6e-8fc9-226cdcaba4dd" />
 
-#### Resolution
+### Resolution
 Updated the client DNS settings to use the internal DNS service hosted on `dc-1`, restoring communication with the `helpdesklab.local` domain, internal resources, and Active Directory authentication services.
 
-#### Skills Learned
-- DNS troubleshooting
-- Domain join troubleshooting
-- Network diagnostics
-- Windows networking
 ---
 
 ### Scenario 2 - User & Group Management
@@ -106,7 +98,7 @@ Users and security groups had not been configured for role-based access manageme
 <img width="396" height="451" alt="image" src="https://github.com/user-attachments/assets/c2850378-91cb-4793-97f6-a5d4e8d1594a" />
 <img width="398" height="452" alt="image" src="https://github.com/user-attachments/assets/ba02931e-7270-4aa6-bbc1-b8597e76b0ab" />
 
-#### Resolution
+### Resolution
 Configured Active Directory users and departmental security groups successfully, allowing employees to access appropriate resources based on their job roles and department permissions.
 
 ---
@@ -138,7 +130,7 @@ Shows the user account locked within Active Directory Users and Computers.
 
 <img width="848" height="438" alt="image" src="https://github.com/user-attachments/assets/34176cd8-ae3c-458d-bb47-72fa6bc84216" />
 
-#### Resolution
+### Resolution
 Unlocked the `sjohnson` account within Active Directory Users and Computers and verified successful login access to the domain environment.
 
 ---
@@ -172,7 +164,7 @@ Configured minimum password length policy within the Group Policy Management Edi
 Verified successful Group Policy deployment on `client-1` using `gpupdate /force`.
 <img width="725" height="274" alt="image" src="https://github.com/user-attachments/assets/361f8478-06e6-4e7f-ad84-6d5398384e7b" />
 
-#### Resolution
+### Resolution
 Configured and applied Group Policy settings successfully across domain devices.
 
 ---
