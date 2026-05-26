@@ -1,4 +1,4 @@
-# Azure Active Directory Help Desk Lab
+# Active Directory Help Desk Lab
 
 ### Overview
 This project simulates real-world Active Directory administration and help desk troubleshooting tasks within a Windows Server and Azure environment. The lab focuses on configuring domain services, troubleshooting domain join issues, managing users and groups, resolving account lockouts, and applying Group Policy settings commonly handled by IT support specialists and system administrators.
